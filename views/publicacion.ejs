@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Overlapp</title>
+    <link href="../stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="../stylesheets/scrolling-nav.css" rel="stylesheet">
+    <link href="../stylesheets/style.css" rel="stylesheet">
+  </head>
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <navnav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </button>
+          <a class="navbar-brand page-scroll" href="#page-top">
+            <div>
+              <img style="width: 25px" alt="Brand" src="../images/logo2.png"> Overlapp Developers
+            </div>
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling-->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <!-- Hidden li included to remove active class from about link when scrolled up past about section-->
+            <li class="hidden"><a class="page-scroll" href="#page-top"></a></li>
+            <li><a class="page-scroll" href="/">Inicio</a></li>
+            <li><a class="page-scroll" href="/start">Comenzar</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse-->
+      </div>
+      <!-- /.container-->
+    </navnav>
+<div class="container special-section">
+	<div class="row ">
+		<div class="col-sm-4 col-md-3 sidebar">
+    <div class="mini-submenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+    <div class="list-group top-pad">
+        <a href="/start" class="list-group-item">
+            <i class="glyphicon glyphicon-link"></i> Implementando Overlapp
+        </a>
+        <a href="/usuario" class="list-group-item">
+            <i class="fa fa-user"></i> Usuario
+        </a>
+        <a href="/equipo" class="list-group-item ">
+            <i class="glyphicon glyphicon-th-large"></i> Equipo 
+        </a>
+     <a href="/canal" class="list-group-item ">
+            <i class="glyphicon glyphicon-resize-full"></i> Canal
+        </a>
+        <a href="/perfilcanal" class="list-group-item">
+            <i class="glyphicon glyphicon-fullscreen"></i> Perfil y Canal
+        </a>
+        <a href="/publicacion" class="list-group-item active">
+            <i class="glyphicon glyphicon-pushpin"></i> Publicacion 
+        </a>
+        <a href="/comentario" class="list-group-item">
+            <i class="glyphicon glyphicon-comment"></i> Comentario 
+        </a>
+    </div>        
+</div>
+<div class="col-sm-8 col-md-9 sidebar">
+      <h2>Publicacion</h2>
+      <p>El modelo publicacion cuenta con 3 funcionalidades por medio de los metodos: 
+        <ul class="list-group">
+            <li class="list-group-item"><code>POST:</code> Para registrar un nuevo publicacion</li>        
+            <li class="list-group-item"><code>PUT:</code> Para editar un publicacion</li>
+            <li class="list-group-item" ><code>DELETE:</code> Para eliminar un publicacion</li>
+        </ul>
+      </p>
+      <h3>Autenticación, antes que nada</h3>
+      <p>Para poder acceder a todos esos metodos se debe de enviar el Token generado 
+        previamente en la cabezera de la petición de la siguiente manera:
+      </p>
+      <img src="../images/auth.png" class="img-responsive" alt="">
+      <br>
+      <p>
+        <i>*Cualquier petición hecha a nuestro Web API que no contengo en su cabezera
+          un token, o uno no valido sera rechazada.
+        </i>
+      </p>
+      <ul class="list-group">
+        <li class="list-group">
+            <h3>Metodo <code>POST</code></h3>
+            <h4>Agregar</h4>
+            <p>
+                El endpoint para el registro de un nuevo publicacion mediante POST es <code>http://localhost:3000/api/v1/publicacion</code> 
+            </p>
+            <p>
+                Por medio del metodo POST espera recibir un JSON con las siguientes especificaciones:
+            </p>
+            <img src="../images/catorce.png" class="img-responsive" alt="">
+            <br>
+            <p>Una vez haya sido registrado, se responderá un JSON con la información de la petición.
+            </p>
+            <img src="../images/quince.png" class="img-responsive" alt="">
+            <hr>
+        </li>
+        <li class="list-group">
+            <h3>Metodo <code>PUT</code></h3>
+            <h4>Modificar un registro</h4>
+            <p>
+                El endpoint para la modificación de un publicacion mediante PUT es <code>http://localhost:3000/api/v1/publicacion/:idPublicacion</code> 
+            </p>
+            <p>Nuestro potente Web API le permite modificar el registro de un publicacion, mediante el metodo
+              PUT, se requiere que en la url se envie el id del publicacion a modificar, y en el cuerpo de la
+              petición un JSON con las siguientes especificaciones:
+            </p>
+            <img src="../images/dieciseis.png" class="img-responsive" alt="">
+            <br>
+            <p>Una vez haya sido consumido el servicio, se responderá con un JSON con el resultado de la petición.
+            </p>
+            <img src="../images/once.png" class="img-responsive" alt="">
+            <br>
+            <hr>
+        </li>
+        <li class="list-group">
+            <h3>Metodo <code>DELETE</code></h3>
+            <h4>Eliminar un registro</h4>
+            <p>
+                El endpoint para eliminar un publicacion mediante el metodo DELETE es <code>http://localhost:3000/api/v1/publicacion/:idPublicacion</code> 
+            </p>
+            <p>Nuestro potente Web API le permite eliminar el registro de un publicacion, mediante el metodo
+              DELETE, se requiere que en la url se envie el id del publicacion a eliminar
+            </p>
+            <img src="../images/diecisiete.png" class="img-responsive" alt="">
+            <br>
+            <p>Una vez haya sido consumido el servicio, se responderá con un JSON con el resultado de la petición.
+            </p>
+            <img src="../images/dieciocho.png" class="img-responsive" alt="">
+            <br>
+            <hr>
+        </li>
+      </ul>
+      <p>
+
+      </p>
+</div>
+	</div>
+</div>
+    <footer>
+      <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+      <!-- footer start from here-->
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 footerleft">
+              <div class="logofooter"><img src="../images/logo.png" style="width: 170px;" alt=""></div>
+              <p>Uno de los fundamentos de la inteligencia competitiva es la rapidez con la que 
+                la información circula. En esto se basa <a href="">OVERLAPP</a>
+              </p>
+              <p><i class="fa fa-map-pin"></i> zona 12, colonia Landivar - Guatemala</p>
+              <p><i class="fa fa-phone"></i> Telefono(502): 3342-5342</p>
+              <p><i class="fa fa-envelope"></i> E-mail : info@overlapp.com</p>
+            </div>
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7">ENLACES GENERALES</h6>
+              <ul class="footer-ul">
+                <li><a href="#"> Politicas de Privacidad</a></li>
+                <li><a href="#"> Terminos y Condiciones</a></li>
+                <li><a href="#"> Preguntas Frecuentes</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7">ULTIMAS ACTUALIZACIONES</h6>
+              <div class="post">
+                <p>Primer beta estable, creado por nosotros<span>Julio 26, 2017</span></p>
+                <p>Lanzamiento oficial, funcionando al cien <span>August 3,2015</span></p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 paddingtop-bottom">
+              <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                <div class="fb-xfbml-parse-ignore">
+                  <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- footer start from here-->
+      <div class="copyright">
+        <div class="container">
+          <div class="col-md-6">
+            <p>© 2017 - All Rights with Overlapp</p>
+          </div>
+          <div class="col-md-6">
+            <ul class="bottom_ul">
+              <li><a href="#">overlapp.com</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Faq's</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">Site Map</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/jquery.easing.min.js"></script>
+    <script src="/javascripts/scrolling-nav.js"></script>
+  </body>
+</html>
